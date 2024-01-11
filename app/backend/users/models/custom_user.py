@@ -46,6 +46,7 @@ class CustomUser(AbstractBaseUser, Model, PermissionsMixin):
         Basic method to activate a user
         """
         self.is_active = True
+        self.save()  ## you need to save it to the databse
         return self
 
     def get_full_name(self):
